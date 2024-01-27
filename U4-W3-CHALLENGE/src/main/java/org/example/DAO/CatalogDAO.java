@@ -81,4 +81,36 @@ public class CatalogDAO {
         }
         return query.getResultList();
     }
+
+
+    //RICERCA PER TITOLO O PARTIAL DEL TITOLO
+
+    public List<Catalog> searchByTitle(String partialTitle) {
+
+        TypedQuery<Catalog> query = entityManager.createNamedQuery("searchByTitle", Catalog.class);
+        query.setParameter("partial", partialTitle);
+
+        if (query.getResultList().isEmpty()) {
+
+            System.out.println("Mi dispiace ,non è stato pubblicato nessun elemento intitolato in questo modo ");
+
+        }
+        return query.getResultList();
+    }
+
+
+    //RICERCA A A A AA
+
+    public List<Catalog> searchLoanByUser(long myId) {
+
+        TypedQuery<Catalog> query = entityManager.createNamedQuery("searchLoanByUser", Catalog.class);
+        query.setParameter("myId", myId);
+
+        if (query.getResultList().isEmpty()) {
+
+            System.out.println("Nessun elemento attualmente in prestito per l'utente con l'id inserito");
+
+        }
+        return query.getResultList();
+    }
 }

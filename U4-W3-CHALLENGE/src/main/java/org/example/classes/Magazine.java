@@ -33,9 +33,9 @@ public class Magazine extends Catalog {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Magazine{" +
                 ", title='" + this.getTitle() + '\'' +
-                "author='" + periodicity + '\'' +
+                "periodicity='" + periodicity + '\'' +
                 ", yearOfPublication=" + this.getYearOfPublication() +
                 ", numberPages=" + this.getNumberPages() +
                 '}';

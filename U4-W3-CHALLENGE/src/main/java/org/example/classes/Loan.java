@@ -35,12 +35,12 @@ public class Loan {
 
     public Loan(){}
 
-    public Loan(User user, Catalog loanedElement, LocalDate realReturnDate) {
+    public Loan(User user, Catalog loanedElement) {
         this.user = user;
         this.loanedElement = loanedElement;
         this.startLoanDate = LocalDate.now();
         this.expectedReturnDate = startLoanDate.plusDays(30);
-        this.realReturnDate = realReturnDate;
+
     }
 
     public long getId() {
