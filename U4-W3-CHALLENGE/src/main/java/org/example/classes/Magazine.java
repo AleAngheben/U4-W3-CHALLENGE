@@ -9,13 +9,14 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
-@DiscriminatorValue("Book")
+@DiscriminatorValue("Magazine")
 public class Magazine extends Catalog {
 
     @Enumerated(EnumType.STRING)
     private Periodicity periodicity;
 
-public Magazine (){}
+    public Magazine() {
+    }
 
     public Magazine(String title, int yearOfPublication, int numberPages, Periodicity periodicity) {
         super(title, yearOfPublication, numberPages);

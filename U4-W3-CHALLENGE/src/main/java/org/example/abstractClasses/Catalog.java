@@ -8,7 +8,12 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Table(name = "catalogues")
 @DiscriminatorColumn(name = "type")
+
+//query per operazioni nel dao
+@NamedQuery(name = "searchByPublicationYear", query = "SELECT c FROM Catalog c WHERE c.yearOfPublication = :yearOfPublication")
+@NamedQuery(name = "searchByAuthor", query = "SELECT c FROM Catalog c WHERE LOWER(c.author) LIKE LOWER(:author)")
 public abstract class Catalog {
 
     @Id

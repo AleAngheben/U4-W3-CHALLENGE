@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
-    private int name;
+    private String name;
 
     private String surname;
 
@@ -25,17 +25,17 @@ public class User {
 
     public User (){}
 
-    public User(int name, String surname, LocalDate dateOfBirth) {
+    public User(String name, String surname, LocalDate dateOfBirth) {
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -59,5 +59,11 @@ public class User {
         return cardId;
     }
 
+    public Set<Loan> getUserLoan() {
+        return userLoan;
+    }
 
+    public void setUserLoan(Set<Loan> userLoan) {
+        this.userLoan = userLoan;
+    }
 }

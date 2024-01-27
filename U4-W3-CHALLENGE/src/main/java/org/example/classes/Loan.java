@@ -33,4 +33,57 @@ public class Loan {
     private LocalDate realReturnDate;
 
 
+    public Loan(){}
+
+    public Loan(User user, Catalog loanedElement, LocalDate realReturnDate) {
+        this.user = user;
+        this.loanedElement = loanedElement;
+        this.startLoanDate = LocalDate.now();
+        this.expectedReturnDate = startLoanDate.plusDays(30);
+        this.realReturnDate = realReturnDate;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Catalog getLoanedElement() {
+        return loanedElement;
+    }
+
+    public void setLoanedElement(Catalog loanedElement) {
+        this.loanedElement = loanedElement;
+    }
+
+    public LocalDate getStartLoanDate() {
+        return startLoanDate;
+    }
+
+    public void setStartLoanDate(LocalDate startLoanDate) {
+        this.startLoanDate = startLoanDate;
+    }
+
+    public LocalDate getExpectedReturnDate() {
+        return expectedReturnDate;
+    }
+
+    public void setExpectedReturnDate(LocalDate expectedReturnDate) {
+        this.expectedReturnDate = expectedReturnDate;
+    }
+
+    public LocalDate getRealReturnDate() {
+        return realReturnDate;
+    }
+
+    public void setRealReturnDate(LocalDate realReturnDate) {
+        this.realReturnDate = realReturnDate;
+    }
 }
