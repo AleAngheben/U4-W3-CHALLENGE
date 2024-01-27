@@ -99,7 +99,7 @@ public class CatalogDAO {
     }
 
 
-    //RICERCA A A A AA
+    // RICERCA ELEMENTI IN PRESTITO TRAMITE USER
 
     public List<Catalog> searchLoanByUser(long myId) {
 
@@ -109,6 +109,20 @@ public class CatalogDAO {
         if (query.getResultList().isEmpty()) {
 
             System.out.println("Nessun elemento attualmente in prestito per l'utente con l'id inserito");
+
+        }
+        return query.getResultList();
+    }
+
+
+    // RICERCA DEI PRESTITI SCADUTI
+
+    public List<Catalog> searchExpiredLoans() {
+
+        TypedQuery<Catalog> query = entityManager.createNamedQuery("searchExpiredLoans", Catalog.class);
+        if (query.getResultList().isEmpty()) {
+
+            System.out.println("non ho trovato nessun elemento con il prestito scaduto , tutto in regola!");
 
         }
         return query.getResultList();

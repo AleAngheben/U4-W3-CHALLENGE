@@ -122,7 +122,7 @@ public class Application {
         // 8 RICERCA TUTTI PRESTITI SCADUTI
         System.out.println("");
         System.out.println("Esercizio 8 - cerco tutti i prestiti scaduti");
-
+        System.out.println(cDAO.searchExpiredLoans());
 
     }
 }

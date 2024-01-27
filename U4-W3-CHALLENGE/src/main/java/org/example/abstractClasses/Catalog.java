@@ -16,7 +16,7 @@ import java.util.List;
 @NamedQuery(name = "searchByAuthor", query = "SELECT c FROM Catalog c WHERE LOWER(c.author) LIKE LOWER(:author)")
 @NamedQuery(name = "searchByTitle", query = "SELECT c FROM Catalog c WHERE LOWER(c.title) LIKE LOWER(CONCAT('%' , :partial, '%'))")
 @NamedQuery(name = "searchLoanByUser" , query = "SELECT c FROM Catalog c JOIN c.loanedList lo WHERE lo.user.cardId = :myId")
-
+@NamedQuery(name = "searchExpiredLoans", query = "SELECT c FROM Catalog c JOIN c.loanedList lo WHERE lo.realReturnDate IS NULL AND lo.expectedReturnDate < NOW()  ")
 public abstract class Catalog {
 
     @Id
